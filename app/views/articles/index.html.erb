@@ -14,7 +14,7 @@
 
   <tbody>
     <% @articles.each do |article| %>
-      <tr class="<%= cycle=('list_line_odd', 'list_line_even') %>">
+      <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
         <td><%= article.title %></td>
         <td><%= article.post %></td>
         <td><%= article.user_id %></td>
