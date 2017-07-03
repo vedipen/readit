@@ -15,5 +15,35 @@
   <%= @article.user_id %>
 </p>
 
+<h2>Comments</h2>
+<% @article.comments.each do |comment| %>
+<p>
+  <strong>Commenter:</strong>
+  <%= comment.commenter %>
+</p>
+
+<p>
+  <strong>Comments:</strong>
+  <%= comment.body %>
+</p>
+<% end %>
+
+<h2>Add a Comment:</h2>
+<%= form_for([@article, @article.comments.build]) do |f| %>
+
+<p>
+  <%= f.label :commenter %><br />
+  <%= f.text_field :commenter %><br />
+</p>
+
+<p>
+  <%= f.label :body %><br />
+  <%= f.text_area :body %><br />
+</p>
+
+<p>
+  <%= f.submit %>
+<% end %>
+
 <%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Back', articles_path %>
