@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>User</th>
       <th>Password</th>
       <th>Email</th>
       <th colspan="3"></th>
@@ -14,6 +15,7 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
+        <td><%= user.id %></td>
         <td><%= user.password %></td>
         <td><%= user.email %></td>
         <td><%= link_to 'Show', user %></td>
@@ -27,3 +29,5 @@
 <br>
 
 <%= link_to 'New User', new_user_path %>
+<br/>
+<%= link_to 'Show Articles', articles_path %>
