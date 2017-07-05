@@ -6,6 +6,7 @@
 unless defined?(Spring)
   require 'rubygems'
   require 'bundler'
+  
 
   lockfile = Bundler::LockfileParser.new(Bundler.default_lockfile.read)
   spring = lockfile.specs.detect { |spec| spec.name == "spring" }
